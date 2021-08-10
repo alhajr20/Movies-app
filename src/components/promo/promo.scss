@@ -1,0 +1,46 @@
+.promo {
+    margin-top: 150px;
+    padding: 200px 0 200px 0;
+
+    &__wrapper {
+        width: 50%;
+
+        h1, p {
+            text-shadow: 0 0 10px $medium-purple;
+        }
+
+        p {
+            margin-top: 50px;
+            line-height: 30px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 30px;
+
+            a {
+                display: flex;
+                align-items: center;
+                color: #fff;
+                font-size: 20px;
+                background: rgba(0, 0, 0, 0.4);
+                padding: 15px 30px;
+                transition: all .3s;
+
+                ion-icon {
+                    margin-right: 5px;
+                    font-size: 30px;
+                }
+
+                &:hover {
+                    color: $medium-purple;
+                }
+            }
+
+            a:last-child {
+                margin-left: 30px;
+            }
+        }
+    }
+}
