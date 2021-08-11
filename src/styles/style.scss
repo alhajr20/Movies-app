@@ -20,7 +20,7 @@ a {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 100%;
     padding: 0 20px;
     margin: 0 auto;
 }
@@ -35,3 +35,4 @@ h2 {
 
 @import '../components/header/header.scss';
 @import '../components/promo/promo.scss';
+@import '../components/popular/popular.scss';
