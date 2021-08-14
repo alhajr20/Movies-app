@@ -1,17 +1,26 @@
 import React, {useState, useEffect} from 'react';
+import requests from '../../Requests';
 
-const IMG = 'https://image.tmdb.org/t/p/w500/';
-const API_KEY = '10f6488514e68084fc563f516e9d780a';
-const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
+const IMG = 'https://image.tmdb.org/t/p/original/';
+const url = `https://api.themoviedb.org/3/`;
 
 function Popular() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch(url)
-            .then(data => data.json())
-            .then(res => setMovies(res.results));
+        async function fetchData() {
+            const request = await fetch(url+requests.fetchPopular);
+            const data = await request.json();
+
+            setMovies(data.results);
+            
+            return data;
+        }
+
+        fetchData();
     }, []);
+
+    console.log(movies);
 
     return (
         <section className="popular">
