@@ -2,15 +2,13 @@ import React, {useState, useEffect} from 'react';
 import requests from '../../Requests';
 
 const IMG = 'https://image.tmdb.org/t/p/w500/';
-const API_KEY = '10f6488514e68084fc563f516e9d780a';
-const url = `https://api.themoviedb.org/3/`;
 
 function Promo() {
     const [movie, setMovie] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            const request = await fetch(url+requests.fetchPopular);
+            const request = await fetch(requests.fetchPopular);
             const data = await request.json();
             setMovie(
                 data.results[
