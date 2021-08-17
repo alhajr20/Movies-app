@@ -28,6 +28,7 @@ function Row({title, url}) {
                     {
                         movies.map((item, i) => (
                             <div key={i} className="row__item">
+                                <div className={`row__vote ${item.vote_average >= 7 ? 'row__vote-green' : item.vote_average < 7 ? 'row__vote-yellow' : 'row__vote-red'}`}>{item.vote_average}</div>
                                 <img src={IMG+item.poster_path} alt={item.title} />
                                 <div className="row__item-more">
                                     <a href="#"><ion-icon name="information-circle-outline"></ion-icon> More Info</a>
