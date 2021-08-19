@@ -1,0 +1,38 @@
+.footer {
+    margin-top: 100px;
+    padding: 50px 0;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__right {
+        display: flex;
+        margin-right: 200px;
+    }
+
+    &__links {
+        &:first-child {
+            margin-right: 250px;
+        }
+
+        ul {
+            list-style: none;
+            li {
+                &:not(:first-child) {
+                    margin-top: 20px;
+                }
+
+                a {
+                    color: #fff;
+                    transition: all .3s;
+
+                    &:hover {
+                        color: $medium-purple;
+                    }
+                }
+            }
+        }
+    }
+}

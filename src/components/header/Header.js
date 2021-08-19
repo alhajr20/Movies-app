@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import logo from '../../img/logo.png';
 
@@ -8,17 +14,29 @@ function Header() {
             <div className="container">
                 <div className="header__wrapper">
                     <div className="header__left">
-                        <div className="header__logo">
-                            <img src={logo} alt="header logo" />
-                        </div>
-                        <nav className="header__nav">
-                            <ul>
-                                <li><a href="#">Movies</a></li>
-                                <li><a href="#">Series</a></li>
-                                <li><a href="#">TV Shows</a></li>
-                                <li><a href="#">My List</a></li>
-                            </ul>
-                        </nav>
+                        <Router>
+                            <div className="header__logo">
+                                <Link to="/">
+                                    <img src={logo} alt="header logo" />
+                                </Link>
+                            </div>
+                            <nav className="header__nav">
+                                <ul>
+                                    <li>
+                                        <Link to="/movies">Movies</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/series">Series</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/shows">TV Shows</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/list">My List</Link>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </Router>
                     </div>
                     <div className="header__right">
                         <div className="header__auth">

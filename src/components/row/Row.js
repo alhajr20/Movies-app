@@ -10,7 +10,7 @@ function Row({title, url}) {
             const request = await fetch(url);
             const data = await request.json();
 
-            setMovies(data.results.slice(0, 5));
+            setMovies(data.results.slice(0, 7));
             
             return data;
         }
@@ -28,10 +28,20 @@ function Row({title, url}) {
                     {
                         movies.map((item, i) => (
                             <div key={i} className="row__item">
-                                <div className={`row__vote ${item.vote_average >= 7 ? 'row__vote-green' : item.vote_average < 7 ? 'row__vote-yellow' : 'row__vote-red'}`}>{item.vote_average}</div>
                                 <img src={IMG+item.poster_path} alt={item.title} />
-                                <div className="row__item-more">
-                                    <a href="#"><ion-icon name="information-circle-outline"></ion-icon> More Info</a>
+                                <div className="row__item-more"
+                                    style={{
+                                        backgroundSize: "cover",
+                                        backgroundImage: `url('${IMG+item.backdrop_path}')`,
+                                        backgroundPosition: "center center"
+                                    }}
+                                >
+                                    <h3>{item.title}</h3>
+                                    <span className={`${item.vote_average >= 7 ? 'green' : item.vote_average < 7 ? 'yellow' : 'red'}`}>{item.vote_average}</span>
+                                    <p>
+                                        {item.overview}
+                                    </p>
+                                    <a href="#"><ion-icon name="information-circle-outline"></ion-icon> More info</a>
                                 </div>
                             </div>
                         ))

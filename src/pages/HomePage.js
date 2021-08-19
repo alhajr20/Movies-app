@@ -4,6 +4,7 @@ import requests from '../Requests';
 import Header from '../components/header/Header';
 import Promo from '../components/promo/Promo';
 import Row from '../components/row/Row';
+import Footer from '../components/footer/Footer';
 
 function HomePage() {
     return (
@@ -38,6 +39,7 @@ function HomePage() {
                 title="Documentaries"
                 url={requests.fetchDocumentaries}
             />
+            <Footer/>
         </Fragment>
     )
 };

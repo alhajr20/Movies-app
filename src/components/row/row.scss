@@ -3,7 +3,7 @@
 
     &__wrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, auto));
+        grid-template-columns: repeat(auto-fill, minmax(15rem, auto));
         gap: 5px;
         justify-content: space-between;
         margin-top: 30px;
@@ -39,6 +39,20 @@
         position: relative;
         justify-self: center;
         cursor: pointer;
+        transition: all .5s;
+
+        &:hover {
+            transform: scale(1.4);
+            z-index: 10;
+        }
+
+        &:first-child {
+            &:hover {transform: scale(1.4) translateX(50px);}
+        }
+
+        &:last-child {
+            &:hover {transform: scale(1.4) translateX(-50px);}
+        }
 
         img {
             width: 100%;
@@ -46,28 +60,60 @@
 
         &-more {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 30px 10px;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(150, 78, 194, .3);
+            background-color: rgba(33, 34, 36, .6);
             opacity: 0;
             transition: all .5s;
+
+            .green {
+                color: #6CC24E;
+            }
+    
+            .yellow {
+                color: #CBC944;
+            }
+    
+            .red {
+                color: red;
+            }
+
+            h3, p {
+                text-shadow: 0 0 10px #000;
+            }
+
+            h3 {
+                margin-bottom: 10px;
+            }
+            
+            p {
+                font-size: 10px;
+            }
 
             a {
                 display: flex;
                 align-items: center;
                 color: #fff;
-                font-size: 20px;
+                font-size: 12px;
                 background: rgba(0, 0, 0, 0.4);
-                padding: 15px 30px;
+                padding: 10px 20px;
+                margin-top: 20px;
+                transition: .3s all;
 
                 ion-icon {
                     margin-right: 5px;
-                    font-size: 30px;
+                    font-size: 20px;
+                }
+
+                &:hover {
+                    background: $global-bg;
                 }
             }
 
