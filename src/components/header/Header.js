@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 
@@ -13,8 +11,8 @@ function Header() {
         <header className="header">
             <div className="container">
                 <div className="header__wrapper">
-                    <div className="header__left">
-                        <Router>
+                    <Router>
+                        <div className="header__left">
                             <div className="header__logo">
                                 <Link to="/">
                                     <img src={logo} alt="header logo" />
@@ -36,14 +34,14 @@ function Header() {
                                     </li>
                                 </ul>
                             </nav>
-                        </Router>
-                    </div>
-                    <div className="header__right">
-                        <div className="header__auth">
-                            <a href="#">Log In</a>
-                            <a href="#">Sign Up</a>
                         </div>
-                    </div>
+                        <div className="header__right">
+                            <div className="header__auth">
+                                <Link to="#">Log In</Link>
+                                <Link to="#">Sign Up</Link>
+                            </div>
+                        </div>
+                    </Router>
                 </div>
             </div>
         </header>

@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import requests from '../Requests';
 
-import Header from '../components/header/Header';
 import Promo from '../components/promo/Promo';
 import Row from '../components/row/Row';
 import Footer from '../components/footer/Footer';
@@ -9,7 +8,6 @@ import Footer from '../components/footer/Footer';
 function HomePage() {
     return (
         <Fragment>
-            <Header/>
             <Promo/>
             <Row
                 title="Popular"
