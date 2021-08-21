@@ -1,4 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import {
+    BrowserRouter as Router,
+    Link
+} from "react-router-dom";
+
 import requests from '../../Requests';
 
 const IMG = 'https://image.tmdb.org/t/p/w500/';
@@ -39,14 +44,14 @@ function Promo() {
                     </p>
 
                     <div className="links">
-                        <a href="#">
+                        <Link href="#">
                             <ion-icon name="play-circle-outline"></ion-icon>
                             Play
-                        </a>
-                        <a href="#">
+                        </Link>
+                        <Link to={`/movie/${movie.id}`}>
                             <ion-icon name="information-circle-outline"></ion-icon>
                             More info
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

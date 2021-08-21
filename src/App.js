@@ -1,8 +1,7 @@
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 import Header from './components/header/Header';
@@ -18,7 +17,7 @@ function App() {
                 <Header/>
                 <Switch>
                     <Route path="/" exact component={HomePage}/>
-                    <Route path="/movie/:id" component={Movie}/>
+                    <Route path="/movie/:id" exact component={Movie}/>
                 </Switch>
             </div>
         </Router>

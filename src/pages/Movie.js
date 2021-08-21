@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 
+import MoviePromo from '../components/movie-promo/moviePromo';
+
 function Movie() {
     return (
         <Fragment>
-            <h1>Hello</h1>
+            <MoviePromo/>
         </Fragment>
     );
 }

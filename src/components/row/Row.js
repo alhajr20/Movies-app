@@ -1,4 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import {
+    BrowserRouter as Router,
+    Link
+} from "react-router-dom";
 
 const IMG = 'https://image.tmdb.org/t/p/original/';
 
@@ -41,7 +45,7 @@ function Row({title, url}) {
                                     <p>
                                         {item.overview}
                                     </p>
-                                    <a href="#"><ion-icon name="information-circle-outline"></ion-icon> More info</a>
+                                    <Link to={`/movie/${item.id}`}><ion-icon name="information-circle-outline"></ion-icon> More info</Link>
                                 </div>
                             </div>
                         ))
