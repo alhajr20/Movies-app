@@ -3,6 +3,8 @@ import {
     BrowserRouter as Router,
     Link
 } from "react-router-dom";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/swiper.scss';
 
 const IMG = 'https://image.tmdb.org/t/p/original/';
 
@@ -14,7 +16,7 @@ function Row({title, url}) {
             const request = await fetch(url);
             const data = await request.json();
 
-            setMovies(data.results.slice(0, 7));
+            setMovies(data.results);
             
             return data;
         }
@@ -28,10 +30,14 @@ function Row({title, url}) {
         <section className="row">
             <div className="container">
                 <h2 className="row__title">{title}</h2>
-                <div className="row__wrapper">
+                <Swiper 
+                    className="row__wrapper"
+                    spaceBetween={10}
+                    slidesPerView={7}    
+                >
                     {
                         movies.map((item, i) => (
-                            <div key={i} className="row__item">
+                            <SwiperSlide key={i} className="row__item">
                                 <img src={IMG+item.poster_path} alt={item.title} />
                                 <div className="row__item-more"
                                     style={{
@@ -47,10 +53,10 @@ function Row({title, url}) {
                                     </p>
                                     <Link to={`/movie/${item.id}`}><ion-icon name="information-circle-outline"></ion-icon> More info</Link>
                                 </div>
-                            </div>
+                            </SwiperSlide>
                         ))
                     }
-                </div>
+                </Swiper>
             </div>
         </section>
     );
